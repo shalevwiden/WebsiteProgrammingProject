@@ -1,0 +1,30 @@
+## Website Programming Project
+
+Using python to automate the creation of a website, in sort using it to link a variety of created csvs and md files in a variety of subfolders onto the website.
+
+I automated the creation of the markdown and csv files from a previous project, which is on my github as
+`markdowntable_andcsv_creator`.
+Using the code from that project, I mass generated and placed .md files with tables in them and .csv files.
+
+This project has 10 Asset Storage Files, which are split up and accessed by 1-5 and 6-10. Each page links to a created markdown file and csv file, of which the number of rows and columns correlates to the number of the html file.
+<br>
+Many such tweaks have been made to the markdown file, which updates all created markdown files through `tablecreatorscript.py` in the `markdowntable_andcsv_creator` repo
+
+---
+
+This project is both scalable and brittle.
+You can easily expand the number of assets generated and the number of html files detailing those assets, such as `assetstorage1.html` for example.
+However its very brittle in the fact that naming conventions cant be changed. The names have to follow a format which is pretty locked.
+
+Take this sequence of code for example:
+
+```python
+num=subfolder.replace('files','').split('e')[-1]
+subfoldername_inhtml=f'Asset Folder {num} Files '
+
+html_link=subfolder.split(num)[0]+num+'.html'
+```
+
+`num=subfolder.replace('files','').split('e')[-1]` takes the folder name like assetstorage2files, and returns2. Its reliant on a number being next to a 2 character as files being in the string, so it can be changed to an empty space.
+
+This project has many such references, navigating through the `assets` folder to build a website in the `html_files` folder.

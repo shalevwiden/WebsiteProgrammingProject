@@ -1,0 +1,30 @@
+/* this controls the syling of the index.html file for the website */
+
+body{
+    font-family: Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#heading{
+    font-size: 110%;
+    color: rgb(6, 6, 63);
+
+    
+}
+.maindiv{
+    /* initialize a grid here */
+    display: grid;
+    width: 75vw;
+    height: 75vh;
+    border: 3px solid rgb(11, 45, 102);
+    border-radius: 20px;
+}
+footer{
+    display: flex;
+}
+
