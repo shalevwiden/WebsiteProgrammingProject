@@ -12,6 +12,7 @@ body {
   margin: 0;
 }
 
+/* reuse this set up for future websites */
 .sitecontainer {
   min-height: 100vh;
   display: flex;
@@ -19,15 +20,60 @@ body {
   align-items: center;
   justify-content: center;
 }
+#navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: #3f5efb;
+  background: linear-gradient(
+    27deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 94, 1) 100%
+  );
+  width: 100vw;
+  height: 76px;
+}
+.leftnarbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.rightnavbar {
+  padding: 0 26px;
+}
 main {
-  /* this takes up all available space */
-
-  flex: 1;
+  /* this takes up all available space. And its responsive */
+  /* minimum height 350px */
+  flex: 1 1 350px;
   border-radius: 20px;
   border: 4px dashed rgb(65, 15, 15);
-  width: 1000px;
+  /* makes it responsive */
+  width: 75%;
   padding: 50px 50px;
-  margin: 26px;
+  margin: 36px;
+}
+
+h3.filetext {
+  width: 200px;
+}
+/* 
+h3 a {
+  text-decoration-thickness: 4px;
+  text-underline-offset: 3px;
+} */
+h3 {
+  color: teal;
+}
+.markdownbuttons {
+  display: inline;
+}
+
+.linkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0px 40px;
 }
 footer {
   display: flex;
@@ -41,4 +87,9 @@ footer {
   background-color: teal;
   color: white;
   box-sizing: border-box;
+}
+
+.footericons a {
+  width: 126%;
+  height: auto;
 }

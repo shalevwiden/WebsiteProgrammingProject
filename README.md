@@ -1,12 +1,15 @@
 ## Website Programming Project
 
-Using python to automate the creation of a basic website, in sort using it to link a variety of created csvs and md files in a variety of subfolders onto the website.
+This project uses python to automate the creation of a basic website, in sort using it to link a variety of created csvs and md files in a variety of subfolders onto the website.
 
 See the website on github pages here:
 
 I automated the creation of the markdown and csv files from a previous project, which is on my github as
 `markdowntable_andcsv_creator`.
 Using the code from that project, I mass generated and placed .md files with tables in them and .csv files.
+
+On each page you can see the .md rendered view, the .md source, and download the .md.
+With the .csv you can download it.
 
 This project has 10 Asset Storage Files, which are split up and accessed by 1-5 and 6-10. Each page links to a created markdown file and csv file, of which the number of rows and columns correlates to the number of the html file.
 <br>
@@ -22,11 +25,11 @@ Take this sequence of code for example:
 
 ```python
 num=subfolder.replace('files','').split('e')[-1]
-subfoldername_inhtml=f'Asset Folder {num} Files '
+subfoldername_inhtml=f'Asset Folder {num} Files'
 
 html_link=subfolder.split(num)[0]+num+'.html'
 ```
 
-`num=subfolder.replace('files','').split('e')[-1]` takes the folder name like assetstorage2files, and returns2. Its reliant on a number being next to a 2 character as files being in the string, so it can be changed to an empty space.
+`num=subfolder.replace('files','').split('e')[-1]` takes the folder name like assetstorage2files, and returns 2. Its reliant on a number being next to a 2 character as files being in the string, so it can be changed to an empty space.
 
-This project has many such references, navigating through the `assets` folder to build a website in the `html_files` folder.
+This project has many such references, navigating through the `assets` folder to build a website in the `html_files` folder, definitely making it less maleable.
