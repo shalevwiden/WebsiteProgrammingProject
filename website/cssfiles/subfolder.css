@@ -20,21 +20,25 @@ body {
   justify-content: center;
 }
 main {
+  /* this takes up all available space */
+
   flex: 1;
   border-radius: 20px;
   border: 4px dashed rgb(65, 15, 15);
-  /* this takes up all available space */
+  width: 1000px;
+  padding: 50px 50px;
+  margin: 26px;
 }
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: calc(100vh);
+  padding: 26px 30px;
+  gap: 0px;
   width: 100vw;
   height: 120px;
   background-color: teal;
   color: white;
   box-sizing: border-box;
-  padding: 20px 0;
 }
