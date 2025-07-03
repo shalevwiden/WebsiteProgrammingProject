@@ -1,6 +1,8 @@
 ## Website Programming Project
 
-Using python to automate the creation of a website, in sort using it to link a variety of created csvs and md files in a variety of subfolders onto the website.
+Using python to automate the creation of a basic website, in sort using it to link a variety of created csvs and md files in a variety of subfolders onto the website.
+
+See the website on github pages here:
 
 I automated the creation of the markdown and csv files from a previous project, which is on my github as
 `markdowntable_andcsv_creator`.

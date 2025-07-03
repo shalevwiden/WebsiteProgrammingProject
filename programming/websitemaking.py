@@ -123,13 +123,17 @@ def generate_websitestructure(assetfolderpath,htmlpath):
     />
   </head>
   <body>
+   <div class="sitecontainer">
+  <main>
     <h1>Asset Storage {num} Files</h1>
-    <a href="{markdownfilepath}"><h3>Markdown File {num}</h3></a>
-    <a href="{csvfilepath}" download"><h3>CSV File {num}</h3></a>
+    <h3><a href="{markdownfilepath}">Markdown File {num}</a></h3>
+    <h3><a href="{csvfilepath}" download>CSV File {num}</a></h3>
+    </main>
     <footer>
       <p>Website Programming Project</p>
       <p>Shalev Widen 2025</p>
     </footer>
+    </div>
   </body>
 </html>
 ''')

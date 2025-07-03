@@ -18,6 +18,7 @@ body{
 }
 .maindiv{
     /* initialize a grid here */
+    /* use media quieries as well */
     display: grid;
     width: 75vw;
     height: 75vh;
