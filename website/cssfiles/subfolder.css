@@ -33,7 +33,7 @@ body {
   );
   width: 92%; /* Shrinks content area */
   padding: 0 8%;
-  height: 76px;
+  height: 86px;
 }
 
 .leftnavbar {
@@ -47,6 +47,9 @@ body {
   display: flex;
   flex-direction: row;
   padding: 0 26px;
+}
+#aboutli {
+  margin-left: 20px;
 }
 
 #websitestructure {

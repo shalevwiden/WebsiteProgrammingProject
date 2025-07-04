@@ -61,12 +61,15 @@ def generate_websitestructure(assetfolderpath,htmlpath):
     maindirs=[item for item in os.listdir(assetfolderpath) if os.path.isdir(f'{assetfolderpath}/{item}')]
 
     for folder in maindirs:
-        foldername=folder.replace('webasset','').replace('html','')
+        foldername=folder.replace('webasset','')
         foldername=foldername.split('s')
         displayfoldername=foldername[0].title()+'s '+foldername[1]
+        # this should return folders1-5index.html
+        lastpart=foldername[0]+'s'+foldername[1]+'index'+'.html'
         
+        htmlmainsubfolder=f'{folder}html'
         # this is what will be linked in the nav
-        html_link_foldername=foldername[0].lower()+'s'+foldername[1]+'.html'
+        html_link_foldername=f'../{lastpart}'
 
 
         fullhtmlpath=f'{htmlpath}/{folder}html'
@@ -143,10 +146,10 @@ def generate_websitestructure(assetfolderpath,htmlpath):
         </div>
         <div class="rightnavbar">
           <ul id="websitestructure">
-            <li><a href="{indexpath}">Home/</a></li>
-            <li><a href="{html_link_foldername}">{displayfoldername}/</a></li>
-            <li><a href="{full_html_filepath}">Asset Storage {num} Files</a></li>
-            <li><a href="../../../aboutwpp.html">About</a></li>
+            <li><a href="{indexpath}">Home / </a></li>
+            <li><a href="{html_link_foldername}">{displayfoldername} / </a></li>
+            <li><a href="{filename}">Asset Storage {num} Files</a></li>
+            <li id="aboutli"><a href="../../../aboutwpp.html">About</a></li>
           </ul>
         </div>
       </nav>
@@ -194,8 +197,6 @@ def generate_websitestructure(assetfolderpath,htmlpath):
           <a href="" title="Follow the GitHub"
             ><i class="fa-brands fa-github"></i
           ></a>
-
-          &#xF8D7;
           <a
             href="https://swervinaround.substack.com/"
             title="Follow the Substack"
@@ -253,11 +254,11 @@ def generate_websitestructure(assetfolderpath,htmlpath):
         </div>
         <div class="rightnavbar">
           <ul id="websitestructure">
-            <li><a href="{indexpath}">Home/</a></li>
-            <li><a href="../../{html_link_foldername}index.html">{displayfoldername}/</a></li>
-            <li><a href="{full_html_filepath}">Asset Storage {num} Files/</a></li>
+            <li><a href="{indexpath}">Home / </a></li>
+            <li><a href="{html_link_foldername}">{displayfoldername} / </a></li>
+            <li><a href="{filename}">Asset Storage {num} Files / </a></li>
             <li><a href="#">Rendered Md {num}</a></li>
-            <li><a href="../../../aboutwpp.html">About</a></li>
+            <li id="aboutli"><a href="../../../aboutwpp.html">About</a></li>
           </ul>
         </div>
       </nav>
