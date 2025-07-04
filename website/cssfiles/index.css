@@ -23,7 +23,57 @@ body {
   /* clips the background to the shape of text */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  grid-column: 2;
+  font-size: 40px;
+  padding: 0 100px 0 0;
 }
+#about {
+  /* font-size: 110%; */
+  /* this is made transparent later and covered by the background */
+  color: rgb(6, 6, 63);
+
+  background: linear-gradient(
+    27deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgb(43, 140, 182) 100%
+  );
+  /* clips the background to the shape of text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+.aboutdiv {
+  grid-column: 4;
+  font-size: 25px;
+  padding: 10px 0 15px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* grid box stuff */
+  align-self: stretch;
+  justify-self: stretch;
+}
+
+#about a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 4px;
+  text-underline-position: below;
+
+  font-weight: bold;
+
+  background: linear-gradient(
+    27deg,
+    rgb(196, 83, 105) 0%,
+    rgb(43, 140, 182) 100%
+  );
+  /* clips the background to the shape of text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .sitecontainer {
   min-height: 100vh;
   display: flex;
@@ -35,9 +85,9 @@ body {
   /* initialize a grid here */
   /* use media quieries as well */
   display: grid;
-  grid-template: 1fr 50px repeat(4, 1fr) / 60fr 35% 10% 35% 40fr;
+  grid-template: 1fr 60px repeat(7, 1fr) / 60fr 35% 10% 35% 40fr;
   width: 90vw;
-  height: 75vh;
+  height: 85vh;
   margin: 50px 50px;
   /* this border style is dooope */
   border: 5px groove rgb(11, 45, 102);
@@ -45,12 +95,6 @@ body {
   /* this changes where the grid items are in the grid box */
   justify-items: center; /*horizontal*/
   align-items: center; /*vertical*/
-}
-
-#heading {
-  grid-column: 2;
-  font-size: 40px;
-  padding: 0 100px 0 0;
 }
 
 .linksdiv {
@@ -68,7 +112,6 @@ body {
 
   border-radius: 26px;
 
-  grid-row: 3/6;
   align-self: stretch;
   justify-self: stretch;
 
@@ -91,11 +134,15 @@ body {
 }
 .linksdiv.one {
   grid-column: 2;
-  /* grid-row: 4; */
+  grid-row: 3/6;
 }
 .linksdiv.two {
   grid-column: 4;
-  /* grid-row: 4; */
+  grid-row: 3/6;
+}
+.linksdiv.big {
+  grid-row: 7 / span 2;
+  grid-column: 2 / span 3;
 }
 
 /* link formatting */
@@ -114,6 +161,7 @@ body {
   font-weight: bold;
   color: rgb(24, 18, 70);
 }
+
 span.gradtext {
   background: linear-gradient(
     190deg,
