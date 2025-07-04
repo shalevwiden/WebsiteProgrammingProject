@@ -31,8 +31,8 @@ body {
     rgba(63, 94, 251, 1) 0%,
     rgba(252, 70, 94, 1) 100%
   );
-  width: 92%; /* Shrinks content area */
-  padding: 0 8%;
+  width: 94%; /* Shrinks content area */
+  padding: 0 3% 0 3%;
   height: 86px;
 }
 
@@ -42,19 +42,16 @@ body {
 }
 #navheading {
   color: white;
+  font-size: clamp(1rem, 5vw, 2rem);
 }
 .rightnavbar {
   display: flex;
   flex-direction: row;
   padding: 0 26px;
 }
-#aboutli {
-  margin-left: 20px;
-}
-
 #websitestructure {
   display: flex;
-  gap: 15px; /* space between links */
+  gap: 8px; /* space between links */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -64,7 +61,98 @@ body {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  font-size: 16px;
 }
+#aboutli {
+  margin-left: 16px;
+}
+
+@media screen and (min-width: 850px) and (max-width: 975px) {
+  #navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #3f5efb;
+    background: linear-gradient(
+      27deg,
+      rgba(63, 94, 251, 1) 0%,
+      rgba(252, 70, 94, 1) 100%
+    );
+    width: 96%; /* Shrinks content area */
+    padding: 0 2% 0 2%;
+    height: 86px;
+  }
+
+  .leftnavbar {
+    display: flex;
+    flex-direction: row;
+  }
+  #navheading {
+    color: white;
+    /* clamp(MIN, FLUID VALUE, MAX)
+ */
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+  .rightnavbar {
+    display: flex;
+    flex-direction: row;
+    padding: 0 26px;
+  }
+  #websitestructure li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  #aboutli {
+    margin-left: 16px;
+  }
+}
+
+/* small screens */
+@media screen and (max-width: 850px) {
+  #navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0 clamp(100px, 25vw, 500px);
+    background: #3f5efb;
+    background: linear-gradient(
+      27deg,
+      rgba(63, 94, 251, 1) 0%,
+      rgba(252, 70, 94, 1) 100%
+    );
+    width: 96%; /* Shrinks content area */
+    padding: 0 2% 0 2%;
+    height: 100px;
+  }
+
+  .leftnavbar {
+    display: flex;
+    flex-direction: row;
+  }
+  #navheading {
+    color: white;
+    font-size: clamp(1rem, 4vw, 1.01rem);
+  }
+  .rightnavbar {
+    display: flex;
+    flex-direction: row;
+    padding: 0 26px;
+  }
+  #websitestructure li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  #aboutli {
+    margin-left: 10px;
+  }
+}
+
 main {
   /* this takes up all available space. And its responsive */
   /* minimum height 350px */
@@ -100,6 +188,10 @@ h3 .filetext {
   flex-direction: row;
   align-items: center;
   gap: 0px 40px;
+}
+
+.linkbox a i {
+  color: rgb(21, 21, 69);
 }
 footer {
   display: flex;
