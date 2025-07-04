@@ -35,7 +35,7 @@ html_link=subfolder.split(num)[0]+num+'.html'
 
 This project has many such references, navigating through the `assets` folder to build a website in the `html_files` folder, definitely making it less maleable.
 
-In this project I also learned how to add title attributes to HTML elements, how to render Markdown content dynamically in html (like this page here), and how to make css text a gradient through:
+In this project I also learned how to add title attributes to HTML elements, how to render Markdown content dynamically in html (like this page here, which is just the rendered README.md from [GitHub]), and how to make css text a gradient through:
 
 ```css
 -webkit-background-clip: text;
@@ -43,3 +43,5 @@ In this project I also learned how to add title attributes to HTML elements, how
 ```
 
 Also added in animations and transformations into the css code.
+
+[GitHub]: https://github.com/shalevwiden/WebsiteProgrammingProject/blob/main/README.md
