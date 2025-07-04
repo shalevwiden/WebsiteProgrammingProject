@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rendered Markdown File 6</title>
+    <link rel="stylesheet" href="../../../cssfiles/subfolder.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <style>
+      #markdownfilecontent {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: 0 0 0 50px;
+      }
+    </style>
+    <div class="sitecontainer">
+      <nav id="navbar">
+        <div class="leftnavbar">
+          <h1 id="navheading">Website Programming Project</h1>
+        </div>
+        <div class="rightnavbar">
+          <ul id="websitestructure">
+            <li><a href="../../../index.html">Home/</a></li>
+            <li><a href="../../folders6-10.htmlindex.html">Folders 6-10/</a></li>
+            <li><a href="website/html_files/webassetfolders6-10html/assetstorage6files/assetstorage6.html">Asset Storage 6 Files/</a></li>
+            <li><a href="#">Rendered Md 6</a></li>
+            <li><a href="../../../aboutwpp.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
+      <main>
+        <div id="markdownfilecontent"></div>
+      </main>
+
+      <!-- add main, websitecontainer, and footer -->
+
+      <footer>
+        <p>Website Programming Project</p>
+        <p>Shalev Widen 2025</p>
+        <!-- add github icon -->
+        <div class="footericons">
+          <a
+            href="https://github.com/shalevwiden"
+            title="Follow the GitHub"
+            target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+
+          <a
+            href="https://swervinaround.substack.com/"
+            title="Follow the Substack"
+            target="_blank"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-substack"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15 3.604H1v1.891h14v-1.89ZM1 7.208V16l7-3.926L15 16V7.208zM15 0H1v1.89h14z"
+              /></svg
+          ></a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- get the script. Its a CDN, delivered through the internet -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+      const contentdiv = document.getElementById("markdownfilecontent");
+
+      fetch(
+        "../../../assets/webassetfolders6-10/assetstorage6/markdowntablefile6.md"
+      )
+        .then((response) => response.text())
+        .then((markdown) => {
+          // set the div with id content to marked.parse
+          contentdiv.innerHTML = marked.parse(markdown);
+        })
+        .catch((error) => {
+          contentdiv.innerText =
+            "Failed to load markdown content probably file paths off";
+          console.error(error);
+        });
+    </script>
+  </body>
+</html>
+
+            

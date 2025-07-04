@@ -35,8 +35,8 @@ def initialize_samplewebsite_assets():
 
 
 # remove the leading slash
-htmlfolderpath=os.path.abspath('website/html_files')
-assetspath=os.path.abspath('website/assets')
+htmlfolderpath='website/html_files'
+assetspath='website/assets'
 
 def generate_websitestructure(assetfolderpath,htmlpath):
     '''
@@ -44,7 +44,6 @@ def generate_websitestructure(assetfolderpath,htmlpath):
     '''
 
     # create a webpage for each assetstoragefolder
-    indexpath=os.path.join(htmlpath,'index.html')
 
     # damn both of these work lmao
     example='assetfolder1'
@@ -64,7 +63,10 @@ def generate_websitestructure(assetfolderpath,htmlpath):
     for folder in maindirs:
         foldername=folder.replace('webasset','').replace('html','')
         foldername=foldername.split('s')
-        foldername=foldername[0].title()+'s '+foldername[1]
+        displayfoldername=foldername[0].title()+'s '+foldername[1]
+        
+        # this is what will be linked in the nav
+        html_link_foldername=foldername[0].lower()+'s'+foldername[1]+'.html'
 
 
         fullhtmlpath=f'{htmlpath}/{folder}html'
@@ -92,6 +94,8 @@ def generate_websitestructure(assetfolderpath,htmlpath):
             csvfile, markdownfile=sorted(os.listdir(fullassetsubfolderpath))
             
             outfactor='../'*3
+
+            indexpath=f'{outfactor}index.html'
 
             csvfilepath=os.path.join(outfactor,'assets',folder,subfolder,csvfile)
             markdownfilepath=os.path.join(outfactor,'assets',folder,subfolder,markdownfile)
@@ -139,8 +143,8 @@ def generate_websitestructure(assetfolderpath,htmlpath):
         </div>
         <div class="rightnavbar">
           <ul id="websitestructure">
-            <li><a href="{indexpath}">/Home</a></li>
-            <li><a href="{fullhtmlpath}">/{foldername}</a></li>
+            <li><a href="{indexpath}">Home/</a></li>
+            <li><a href="{html_link_foldername}">{displayfoldername}/</a></li>
             <li><a href="{full_html_filepath}">Asset Storage {num} Files</a></li>
             <li><a href="../../../aboutwpp.html">About</a></li>
           </ul>
@@ -155,7 +159,7 @@ def generate_websitestructure(assetfolderpath,htmlpath):
           <!-- download icon,link icon and view icon -->
            <p class="markdownbuttons">
             <!-- add the view stuff later -->
-            View:&nbsp;&nbsp; <a href="{full_renderedmd_filepath}"><i class="fa-regular fa-eye"></i></a>
+            View:&nbsp;&nbsp; <a href="{renderedmarkdownfilename}"><i class="fa-regular fa-eye"></i></a>
           </p>
           <p class="markdownbuttons">
             View Markdown Source: &nbsp;<a href="{markdownfilepath}"
@@ -223,7 +227,7 @@ def generate_websitestructure(assetfolderpath,htmlpath):
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rendered Markdown File {num}</title>
-    <link rel="stylesheet" href="../website/cssfiles/subfolder.css" />
+    <link rel="stylesheet" href="../../../cssfiles/subfolder.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -250,7 +254,7 @@ def generate_websitestructure(assetfolderpath,htmlpath):
         <div class="rightnavbar">
           <ul id="websitestructure">
             <li><a href="{indexpath}">Home/</a></li>
-            <li><a href="{fullhtmlpath}">{foldername}/</a></li>
+            <li><a href="../../{html_link_foldername}index.html">{displayfoldername}/</a></li>
             <li><a href="{full_html_filepath}">Asset Storage {num} Files/</a></li>
             <li><a href="#">Rendered Md {num}</a></li>
             <li><a href="../../../aboutwpp.html">About</a></li>
@@ -302,7 +306,7 @@ def generate_websitestructure(assetfolderpath,htmlpath):
       const contentdiv = document.getElementById("markdownfilecontent");
 
       fetch(
-        "../website/assets/webassetfolders1-5/assetstorage5/markdowntablefile5.md"
+        "{markdownfilepath}"
       )
         .then((response) => response.text())
         .then((markdown) => {{
