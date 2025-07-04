@@ -1,0 +1,44 @@
+/* Well this is kinda deprecated since its used inline stylized now rip */
+
+#markdownfilecontent {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 0 50px;
+}
+
+.sitecontainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 26px 30px;
+  gap: 0px;
+  width: 100vw;
+  height: 120px;
+  background-color: teal;
+  color: white;
+  box-sizing: border-box;
+}
+
+.footericons a {
+  width: 126%;
+  height: auto;
+}

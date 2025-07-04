@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asset Storage 4 Files</title>
+    <title>Rendered Markdown File Num</title>
     <link rel="stylesheet" href="../website/cssfiles/subfolder.css" />
     <link
       rel="stylesheet"
@@ -11,6 +11,18 @@
     />
   </head>
   <body>
+    <style>
+      #markdownfilecontent {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: 0 0 0 50px;
+      }
+    </style>
     <div class="sitecontainer">
       <nav id="navbar">
         <div class="leftnavbar">
@@ -18,47 +30,19 @@
         </div>
         <div class="rightnavbar">
           <ul id="websitestructure">
-            <li><a href="">/Home</a></li>
-            <li><a href="">/Index Page</a></li>
-            <li><a href="">/Current Page name</a></li>
+            <li><a href="">Home/</a></li>
+            <li><a href="">/Index Page/</a></li>
+            <li><a href="">/Current Page name/</a></li>
+            <li><a href="#">Rendered Md num</a></li>
             <li><a href="../../../aboutwpp.html">About</a></li>
           </ul>
         </div>
       </nav>
       <main>
-        <h1>Sample File</h1>
-        <br />
-        <!-- Use linkbox to have items on same line -->
-        <div class="linkbox">
-          <h3 class="filetext">Markdown File 4</h3>
-          <!-- download icon, link icon and view icon -->
-          <p class="markdownbuttons">
-            View:&nbsp;&nbsp; <a href=""><i class="fa-regular fa-eye"></i></a>
-          </p>
-          <p class="markdownbuttons">
-            View Markdown Source: &nbsp;<a href="link to file normally"
-              ><i class="fa-solid fa-paperclip"></i
-            ></a>
-          </p>
-          <p class="markdownbuttons">
-            Download:&nbsp;&nbsp;<a href="lionk to file normally" download
-              ><i class="fa-solid fa-arrow-up-from-bracket"></i
-            ></a>
-          </p>
-        </div>
-        <!-- Use linkbox to have items on same line -->
-        <div class="linkbox">
-          <h3 class="filetext">CSV File 4</h3>
-          <p>
-            Download:&nbsp;&nbsp;<a href="" download
-              ><i
-                class="fa-solid fa-arrow-up-from-bracket"
-                title="Download CSV"
-              ></i
-            ></a>
-          </p>
-        </div>
+        <div id="markdownfilecontent"></div>
       </main>
+
+      <!-- add main, websitecontainer, and footer -->
 
       <footer>
         <p>Website Programming Project</p>
@@ -91,5 +75,27 @@
         </div>
       </footer>
     </div>
+
+    <!-- get the script. Its a CDN, delivered through the internet -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+      const contentdiv = document.getElementById("markdownfilecontent");
+
+      fetch(
+        "../website/assets/webassetfolders1-5/assetstorage5/markdowntablefile5.md"
+      )
+        .then((response) => response.text())
+        .then((markdown) => {
+          // set the div with id content to marked.parse
+          contentdiv.innerHTML = marked.parse(markdown);
+        })
+        .catch((error) => {
+          contentdiv.innerText =
+            "Failed to load markdown content probably file paths off";
+          console.error(error);
+        });
+    </script>
+    <!-- <script src="../website/jsfiles/rendermarkdownscript.js"></script> -->
   </body>
 </html>

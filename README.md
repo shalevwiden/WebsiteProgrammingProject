@@ -33,3 +33,12 @@ html_link=subfolder.split(num)[0]+num+'.html'
 `num=subfolder.replace('files','').split('e')[-1]` takes the folder name like assetstorage2files, and returns 2. Its reliant on a number being next to a 2 character as files being in the string, so it can be changed to an empty space.
 
 This project has many such references, navigating through the `assets` folder to build a website in the `html_files` folder, definitely making it less maleable.
+
+In this project I also learned how to add title attributes to HTML elements, how to render Markdown content dynamically in html (like this page here), and how to make css text a gradient through:
+
+```css
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+```
+
+Also added in animations and transformations into the css code.

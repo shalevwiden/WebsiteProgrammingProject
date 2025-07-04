@@ -44,7 +44,7 @@ def generate_websitestructure(assetfolderpath,htmlpath):
     '''
 
     # create a webpage for each assetstoragefolder
-    
+    indexpath=os.path.join(htmlpath,'index.html')
 
     # damn both of these work lmao
     example='assetfolder1'
@@ -62,6 +62,9 @@ def generate_websitestructure(assetfolderpath,htmlpath):
     maindirs=[item for item in os.listdir(assetfolderpath) if os.path.isdir(f'{assetfolderpath}/{item}')]
 
     for folder in maindirs:
+        foldername=folder.replace('webasset','').replace('html','')
+        foldername=foldername.split('s')
+        foldername=foldername[0].title()+'s '+foldername[1]
 
 
         fullhtmlpath=f'{htmlpath}/{folder}html'
@@ -106,6 +109,11 @@ def generate_websitestructure(assetfolderpath,htmlpath):
 
             print(f'Made dir at {full_html_subfolderpath}\n')
 
+
+            # rendered md stuff:
+            renderedmarkdownfilename=f'renderedmd{num}.html'
+            full_renderedmd_filepath=f'{full_html_subfolderpath}/{renderedmarkdownfilename}'
+
             # I have to give it an actual file name, not just .html
             filename=f'{subfolder}.html'
             full_html_filepath=f'{full_html_subfolderpath}/{filename}'
@@ -127,14 +135,13 @@ def generate_websitestructure(assetfolderpath,htmlpath):
     <div class="sitecontainer">
       <nav id="navbar">
         <div class="leftnavbar">
-          <ul id="websitestructure">
-            <li><a href="">/Home</a></li>
-            <li><a href="">/Index Page</a></li>
-            <li><a href="">/Current Page name</a></li>
-          </ul>
+          <h1 id="navheading">Website Programming Project</h1>
         </div>
         <div class="rightnavbar">
-          <ul>
+          <ul id="websitestructure">
+            <li><a href="{indexpath}">/Home</a></li>
+            <li><a href="{fullhtmlpath}">/{foldername}</a></li>
+            <li><a href="{full_html_filepath}">Asset Storage {num} Files</a></li>
             <li><a href="../../../aboutwpp.html">About</a></li>
           </ul>
         </div>
@@ -146,8 +153,9 @@ def generate_websitestructure(assetfolderpath,htmlpath):
         <div class="linkbox">
           <h3 class="filetext">Markdown File {num}</h3>
           <!-- download icon,link icon and view icon -->
-          <p class="markdownbuttons">
-            View:&nbsp;&nbsp; <i class="fa-regular fa-eye"></i>
+           <p class="markdownbuttons">
+            <!-- add the view stuff later -->
+            View:&nbsp;&nbsp; <a href="{full_renderedmd_filepath}"><i class="fa-regular fa-eye"></i></a>
           </p>
           <p class="markdownbuttons">
             View Markdown Source: &nbsp;<a href="{markdownfilepath}"
@@ -155,10 +163,9 @@ def generate_websitestructure(assetfolderpath,htmlpath):
             ></a>
           </p>
           <p class="markdownbuttons">
-            <a href="{markdownfilepath}" download></a>
-            Download:&nbsp;&nbsp;<i
-              class="fa-solid fa-arrow-up-from-bracket"
-            ></i>
+            Download:&nbsp;&nbsp;<a href="{markdownfilepath}" download
+              ><i class="fa-solid fa-arrow-up-from-bracket"></i
+            ></a>
           </p>
         </div>
         <!-- Use linkbox to have items on same line -->
@@ -207,19 +214,122 @@ def generate_websitestructure(assetfolderpath,htmlpath):
 </html>
 
 ''')
-                    
+      
+            with open( full_renderedmd_filepath,'w') as renderedmdhtml:
+              renderedmdhtml.write(f'''
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rendered Markdown File {num}</title>
+    <link rel="stylesheet" href="../website/cssfiles/subfolder.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <style>
+      #markdownfilecontent {{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: 0 0 0 50px;
+      }}
+    </style>
+    <div class="sitecontainer">
+      <nav id="navbar">
+        <div class="leftnavbar">
+          <h1 id="navheading">Website Programming Project</h1>
+        </div>
+        <div class="rightnavbar">
+          <ul id="websitestructure">
+            <li><a href="{indexpath}">Home/</a></li>
+            <li><a href="{fullhtmlpath}">{foldername}/</a></li>
+            <li><a href="{full_html_filepath}">Asset Storage {num} Files/</a></li>
+            <li><a href="#">Rendered Md {num}</a></li>
+            <li><a href="../../../aboutwpp.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
+      <main>
+        <div id="markdownfilecontent"></div>
+      </main>
 
-              
+      <!-- add main, websitecontainer, and footer -->
+
+      <footer>
+        <p>Website Programming Project</p>
+        <p>Shalev Widen 2025</p>
+        <!-- add github icon -->
+        <div class="footericons">
+          <a
+            href="https://github.com/shalevwiden"
+            title="Follow the GitHub"
+            target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+
+          <a
+            href="https://swervinaround.substack.com/"
+            title="Follow the Substack"
+            target="_blank"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-substack"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15 3.604H1v1.891h14v-1.89ZM1 7.208V16l7-3.926L15 16V7.208zM15 0H1v1.89h14z"
+              /></svg
+          ></a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- get the script. Its a CDN, delivered through the internet -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script>
+      const contentdiv = document.getElementById("markdownfilecontent");
+
+      fetch(
+        "../website/assets/webassetfolders1-5/assetstorage5/markdowntablefile5.md"
+      )
+        .then((response) => response.text())
+        .then((markdown) => {{
+          // set the div with id content to marked.parse
+          contentdiv.innerHTML = marked.parse(markdown);
+        }})
+        .catch((error) => {{
+          contentdiv.innerText =
+            "Failed to load markdown content probably file paths off";
+          console.error(error);
+        }});
+    </script>
+  </body>
+</html>
+
+            ''')
+
 
                 
             print(f'Made fullfile path at {full_html_filepath}\n')
-        # first make all the small folders and their assets.
-        # Then make the big folders with all the small folders linked
+        
        
     
 generate_websitestructure(assetfolderpath=assetspath, htmlpath=htmlfolderpath)
 
-
+# first make all the small folders with their assets.
+# Then made the big folders with all the small folders linked
 
 def generate_main_subfolders(htmlpath):
 

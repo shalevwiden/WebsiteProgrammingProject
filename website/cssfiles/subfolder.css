@@ -23,7 +23,7 @@ body {
 #navbar {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   background: #3f5efb;
   background: linear-gradient(
@@ -31,16 +31,36 @@ body {
     rgba(63, 94, 251, 1) 0%,
     rgba(252, 70, 94, 1) 100%
   );
-  width: 100vw;
+  width: 92%; /* Shrinks content area */
+  padding: 0 8%;
   height: 76px;
 }
-.leftnarbar {
+
+.leftnavbar {
   display: flex;
   flex-direction: row;
-  align-items: center;
+}
+#navheading {
+  color: white;
 }
 .rightnavbar {
+  display: flex;
+  flex-direction: row;
   padding: 0 26px;
+}
+
+#websitestructure {
+  display: flex;
+  gap: 15px; /* space between links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#websitestructure li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 main {
   /* this takes up all available space. And its responsive */
@@ -62,7 +82,7 @@ h3 a {
   text-decoration-thickness: 4px;
   text-underline-offset: 3px;
 } */
-h3 {
+h3 .filetext {
   color: teal;
 }
 .markdownbuttons {
@@ -80,16 +100,30 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 26px 30px;
-  gap: 0px;
+  padding: 20px;
+  gap: 20px 10px;
   width: 100vw;
   height: 120px;
   background-color: teal;
   color: white;
   box-sizing: border-box;
+  flex: 1;
 }
 
-.footericons a {
-  width: 126%;
-  height: auto;
+footer p {
+  margin: 0;
+  line-height: 1;
+}
+.footericons {
+  display: flex;
+  gap: 0 20px;
+}
+
+.footericons a i,
+.footericons a svg {
+  font-size: 34px;
+  width: 34px;
+  height: 34px;
+  fill: white; /* for SVG */
+  color: white; /* for <i> */
 }
