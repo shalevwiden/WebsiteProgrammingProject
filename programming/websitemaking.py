@@ -98,7 +98,7 @@ def generate_websitestructure(assetfolderpath,htmlpath):
             
             outfactor='../'*3
 
-            indexpath=f'{outfactor}index.html'
+            indexpath=f'../../index.html'
 
             csvfilepath=os.path.join(outfactor,'assets',folder,subfolder,csvfile)
             markdownfilepath=os.path.join(outfactor,'assets',folder,subfolder,markdownfile)
@@ -149,7 +149,7 @@ def generate_websitestructure(assetfolderpath,htmlpath):
             <li><a href="{indexpath}">Home / </a></li>
             <li><a href="{html_link_foldername}">{displayfoldername} / </a></li>
             <li><a href="{filename}">Asset Storage {num} Files</a></li>
-            <li id="aboutli"><a href="../../../aboutwpp.html">About</a></li>
+            <li id="aboutli"><a href="../../aboutwpp.html">About</a></li>
           </ul>
         </div>
       </nav>
@@ -258,7 +258,7 @@ def generate_websitestructure(assetfolderpath,htmlpath):
             <li><a href="{html_link_foldername}">{displayfoldername} / </a></li>
             <li><a href="{filename}">Asset Storage {num} Files / </a></li>
             <li><a href="#">Rendered Md {num}</a></li>
-            <li id="aboutli"><a href="../../../aboutwpp.html">About</a></li>
+            <li id="aboutli"><a href="../../aboutwpp.html">About</a></li>
           </ul>
         </div>
       </nav>

@@ -32,6 +32,36 @@ body {
   border: 3px solid rgb(11, 45, 102);
   border-radius: 20px;
 }
+
 footer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px 10px;
+  width: 100vw;
+  height: 120px;
+  background-color: teal;
+  color: white;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+footer p {
+  margin: 0;
+  line-height: 1;
+}
+.footericons {
+  display: flex;
+  gap: 0 20px;
+}
+
+.footericons a i,
+.footericons a svg {
+  font-size: 34px;
+  width: 34px;
+  height: 34px;
+  fill: white; /* for SVG */
+  color: white; /* for <i> */
 }
