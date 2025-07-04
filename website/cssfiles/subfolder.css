@@ -76,6 +76,9 @@ main {
   padding: 50px 50px;
   margin: 36px;
 }
+#abouth1 {
+  text-align: center;
+}
 
 h3.filetext {
   width: 200px;
