@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rendered Markdown File 1</title>
-    <link rel="stylesheet" href="../../../cssfiles/subfolder.css" />
+    <title>Rendered Markdown File 50</title>
+    <link rel="stylesheet" href="../../cssfiles/subfolder.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -30,15 +30,17 @@
         </div>
         <div class="rightnavbar">
           <ul id="websitestructure">
-            <li><a href="../../index.html">Home / </a></li>
-            <li><a href="../folders1-5index.html">Folders 1-5 / </a></li>
-            <li><a href="assetstorage1.html">Asset Storage 1 Files / </a></li>
-            <li><a href="#">Rendered Md 1</a></li>
-            <li id="aboutli"><a href="../../aboutwpp.html">About</a></li>
+            <li><a href="../index.html">Home / </a></li>
+            <li><a href="assetstorage50.html">Asset Storage 50 Files</a></li>
+            <li><a href="#">Rendered Md 50</a></li>
+
+            <li id="aboutli"><a href="../aboutwpp.html">About</a></li>
           </ul>
         </div>
       </nav>
       <main>
+        <h1 id="renderedheading">Rendered Markdown File 50</h1>
+        <h2 id="renderedheadinghome"><a href="../index.html">Home</a></h2>
         <div id="markdownfilecontent"></div>
       </main>
 
@@ -82,9 +84,7 @@
     <script>
       const contentdiv = document.getElementById("markdownfilecontent");
 
-      fetch(
-        "../../../assets/webassetfolders1-5/assetstorage1/markdowntablefile1.md"
-      )
+      fetch("../../assets/webassetfolder50/markdowntablefile50.md")
         .then((response) => response.text())
         .then((markdown) => {
           // set the div with id content to marked.parse

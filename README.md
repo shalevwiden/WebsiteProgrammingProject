@@ -9,6 +9,8 @@ I automated the creation of the markdown and csv files from a previous project, 
 `markdowntable_andcsv_creator`.
 Using the code from that project, I mass generated and placed .md files with tables in them and .csv files.
 
+I can replace any of the md files or csv files very speedily with a diferent # of columns, rows, or placeholder quickly.
+
 On each page you can see the .md rendered view, the .md source, and download the .md.
 With the .csv you can download it.
 
