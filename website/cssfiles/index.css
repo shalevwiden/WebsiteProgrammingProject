@@ -7,6 +7,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0;
 }
 
 #heading {
@@ -23,14 +24,98 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.maindiv {
+.sitecontainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.maingrid {
   /* initialize a grid here */
   /* use media quieries as well */
   display: grid;
-  width: 75vw;
+  grid-template: repeat(6, 1fr) / 50fr 35% 10% 35% 50fr;
+  width: 90vw;
   height: 75vh;
+  margin: 50px 50px;
   border: 3px solid rgb(11, 45, 102);
   border-radius: 20px;
+  /* this changes where the grid items are in the grid box */
+  justify-items: center; /*horizontal*/
+  align-items: center; /*vertical*/
+}
+.linksdiv {
+  background: linear-gradient(
+    190deg,
+    rgb(17, 44, 182) 0%,
+    #45b996 10%,
+    rgb(17, 44, 182) 12%,
+
+    rgb(225, 49, 78) 90%,
+    #107657 100%
+  );
+  /* new border size */
+  padding: 4px;
+
+  border-radius: 26px;
+
+  grid-row: 3/6;
+  align-self: stretch;
+  justify-self: stretch;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.linksdivcontent {
+  background: white;
+  border-radius: 26px;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.linksdiv.one {
+  grid-column: 2;
+  /* grid-row: 4; */
+}
+.linksdiv.two {
+  grid-column: 4;
+  /* grid-row: 4; */
+}
+
+/* link formatting */
+.linksdivcontent a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(24, 18, 70);
+}
+
+.linksdivcontent a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+
+  font-weight: bold;
+  color: rgb(24, 18, 70);
+}
+span.gradtext {
+  background: linear-gradient(
+    190deg,
+    rgb(17, 44, 182) 0%,
+    #45b996 10%,
+    rgb(17, 44, 182) 12%,
+
+    rgb(225, 49, 78) 90%,
+    #107657 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 footer {
