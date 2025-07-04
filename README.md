@@ -1,6 +1,7 @@
 ## Website Programming Project
 
 This project uses python to automate the creation of a basic website, in sort using it to link a variety of created csvs and md files in a variety of subfolders onto the website.
+As a result, I can regenerate the entire website in seconds with the footer on the top, for example, or with diferent H1s, titles, or links.
 
 See the website on github pages here:
 

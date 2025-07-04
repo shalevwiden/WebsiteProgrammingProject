@@ -194,6 +194,34 @@ h3 .filetext {
 .linkbox a i {
   color: rgb(21, 21, 69);
 }
+
+/* for the folder indexes:*/
+
+.indexul a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(24, 18, 70);
+}
+
+.indexul a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 4px;
+
+  font-weight: bold;
+  color: rgb(24, 18, 70);
+}
+
+span.gradtext {
+  background: linear-gradient(
+    250deg,
+    rgb(17, 44, 182) 0%,
+    rgb(225, 49, 78) 90%,
+    rgb(247, 234, 95) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 footer {
   display: flex;
   flex-direction: column;

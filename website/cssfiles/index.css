@@ -39,6 +39,7 @@ body {
   width: 90vw;
   height: 75vh;
   margin: 50px 50px;
+  /* this border style is dooope */
   border: 5px groove rgb(11, 45, 102);
   border-radius: 26px;
   /* this changes where the grid items are in the grid box */

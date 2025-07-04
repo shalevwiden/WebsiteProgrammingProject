@@ -194,7 +194,7 @@ def generate_websitestructure(assetfolderpath,htmlpath):
         <p>Shalev Widen 2025</p>
         <!-- add github icon -->
         <div class="footericons">
-          <a href="" title="Follow the GitHub"
+          <a href="https://github.com/shalevwiden" title="Follow the GitHub"
             ><i class="fa-brands fa-github"></i
           ></a>
           <a
@@ -365,7 +365,7 @@ def generate_main_subfolders(htmlpath):
 
         for subfolder in subfolders:
             num=subfolder.replace('files','').split('e')[-1]
-            subfoldername_inhtml=f'Asset Folder {num} Files'
+            subfoldername_inhtml=f'Asset Folder'
 
             html_link=subfolder.split(num)[0]+num+'.html'
             print(f'html link is \n{html_link}')
@@ -373,7 +373,7 @@ def generate_main_subfolders(htmlpath):
             subfoldertext+=f''' 
             <li>
          <h3><a href="{fullhtmllink}">
-         {subfoldername_inhtml}
+         {subfoldername_inhtml} <span class="gradtext">{num} </span>Files
         </a></h3>
       </li>'''
 
@@ -396,25 +396,67 @@ def generate_main_subfolders(htmlpath):
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{filename}</title>
-    <link rel="stylesheet" href="../../cssfiles/subindexfolder.css" />
+    <title>{uifilename.title()}index</title>
+    <link rel="stylesheet" href="../../cssfiles/subfolder.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
   </head>
- <body>
-    <h1>Website Programming Project</h1>
-    <h2>Links to {uifilename}</h2>
-    <ul>{subfoldertext}</ul>
+  <body>
+    <div class="sitecontainer">
+      <nav id="navbar">
+        <div class="leftnavbar">
+          <h1 id="navheading">Website Programming Project</h1>
+        </div>
+        <div class="rightnavbar">
+          <ul id="websitestructure">
+            <li><a href="../index.html">Home / </a></li>
+            <li><a href="{filename}.html">{uifilename.title()}</a></li>
+            <li id="aboutli"><a href="../aboutwpp.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
+      <main>
+        <h2>Links to {uifilename.title()}</h2>
+        <br />
+        <ul class="indexul">
+        <!-- added from mass generated li in python  -->
+         {subfoldertext}
+        </ul>
+      </main>
 
-   
-       <footer>
-      <p>Website Programming Project</p>
-      <p>Shalev Widen 2025</p>
-    </footer>
-
+      <footer>
+        <p>Website Programming Project</p>
+        <p>Shalev Widen 2025</p>
+        <!-- add github icon -->
+        <div class="footericons">
+          <a href="https://github.com/shalevwiden" title="Follow the GitHub"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://swervinaround.substack.com/"
+            title="Follow the Substack"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-substack"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15 3.604H1v1.891h14v-1.89ZM1 7.208V16l7-3.926L15 16V7.208zM15 0H1v1.89h14z"
+              /></svg
+          ></a>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
 
 ''')
-            print(f'Made full file path at\n{fullfilepath}')
+            print(f'Made full mainsubolder at filepath:\n{fullfilepath}')
 
         
 print('generate_main_subfolders\n')

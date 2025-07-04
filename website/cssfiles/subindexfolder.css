@@ -1,4 +1,6 @@
 /* This file controls the styling for all the subindexfolders, ie, the ones with the links to the Asset Subfolders */
+
+/* DEPRECATED NOT USED */
 body {
   scroll-behavior: smooth;
   display: flex;
