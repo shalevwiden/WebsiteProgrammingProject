@@ -357,6 +357,7 @@ def generate_main_subfolders(htmlpath):
     This generated folders1-5index.html
 
     '''    
+    # make sure the asset 50 one isnt added
     htmlfiledirs=[item for item in os.listdir(htmlpath) if "50" not in item]   
 
     htmlfiledirs=[item for item in htmlfiledirs if os.path.isdir(f'{htmlpath}/{item}')] 
