@@ -126,12 +126,16 @@ body {
   border-radius: 22px;
   width: 100%;
   height: 100%;
+  /* changing this padding will affect the gradient border stuff */
   padding: 0px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.linksdivcontent h3 {
+  padding: 10px 30px;
 }
 .linksdiv.one {
   grid-column: 2;

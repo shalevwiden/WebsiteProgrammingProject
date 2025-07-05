@@ -22,24 +22,25 @@
   from {
     background: none;
     color: white;
+    background-position: 0% 50%;
   }
   to {
     background: linear-gradient(
       27deg,
-      rgb(109, 127, 220) 0%,
-      rgb(188, 94, 106) 100%
+      rgb(188, 94, 106) 0%,
+      rgb(109, 127, 220) 100%
     );
     /* apply the gradient to the text */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-position: 50% 100%;
   }
 }
 
 #navheading:hover {
   cursor: pointer;
   /* try backwards later */
-  animation: headingcolorchange 1s ease normal 2 forwards;
-  animation: headingcolorchange 1s ease normal 2 backwards;
+  animation: headingcolorchange 0.2s ease normal forwards;
 
   /* transition: all 0.3s ease; */
 }
