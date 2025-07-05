@@ -94,8 +94,10 @@ def generate_websitestructure(assetfolderpath,htmlpath):
             fullassetsubfolderpath=os.path.join(assetfolderpath,folder,subfolder)
             print(fullassetsubfolderpath)            
             
+            itemsinassetsubfolderpath=[item for item in os.listdir(fullassetsubfolderpath) if item != '.DS_Store']
+
             # sorted will do alphabetically, so I get csvfile first
-            csvfile, markdownfile=sorted(os.listdir(fullassetsubfolderpath))
+            csvfile, markdownfile=sorted(itemsinassetsubfolderpath)
             
             outfactor='../'*3
 
