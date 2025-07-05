@@ -22,15 +22,15 @@ body {
   );
   /* clips the background to the shape of text */
   -webkit-background-clip: text;
+  /* make the other text color transparent */
   -webkit-text-fill-color: transparent;
 
   grid-column: 2;
   font-size: 40px;
   padding: 0 100px 0 0;
 }
+/* this is the h2 element itself */
 #about {
-  /* font-size: 110%; */
-  /* this is made transparent later and covered by the background */
   color: rgb(6, 6, 63);
 
   background: linear-gradient(

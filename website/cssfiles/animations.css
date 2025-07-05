@@ -1,0 +1,103 @@
+/* animations across all diferent files */
+
+/* subfolder animations first */
+
+@keyframes scaleup {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.linkbox a i:hover {
+  cursor: pointer;
+  animation: scaleup 1.2s ease 1 forwards;
+}
+
+@keyframes headingcolorchange {
+  from {
+    background: none;
+    color: white;
+  }
+  to {
+    background: linear-gradient(
+      27deg,
+      rgb(109, 127, 220) 0%,
+      rgb(188, 94, 106) 100%
+    );
+    /* apply the gradient to the text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+#navheading:hover {
+  cursor: pointer;
+  /* try backwards later */
+  animation: headingcolorchange 1s ease normal 2 forwards;
+  animation: headingcolorchange 1s ease normal 2 backwards;
+
+  /* transition: all 0.3s ease; */
+}
+
+@keyframes RotateandScale {
+  0% {
+    /* scale(0.3) means 30% of the original size. */
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.3) rotate(-260deg);
+  }
+  100% {
+    /* can chain many transforms in a single line though */
+    transform: scale(1) rotate(360deg);
+  }
+}
+.fa-github:hover {
+  cursor: pointer;
+  animation: RotateandScale 2s ease;
+}
+
+@keyframes substackanimation1 {
+  0% {
+    transform: scale(1) rotate(0deg) translate(0, 0);
+  }
+  5% {
+    transform: scale(1) rotate(0deg) translate(0, 0);
+  }
+  10% {
+    transform: scale(1.2) rotate(45deg) translate(20px, -200px);
+    fill: rgb(220, 38, 38); /* for SVG */
+  }
+  30% {
+    transform: scale(1.3) rotate(45deg) translate(0, -500px);
+    fill: #ff7731;
+  }
+  50% {
+    transform: scale(1.3) rotate(10deg) translate(0, -500px);
+    fill: #cf591e;
+  }
+  75% {
+    transform: scale(1) rotate(10deg) translate(0, -20px);
+    fill: #ff7731;
+  }
+  100% {
+    transform: scale(1) rotate(0deg) translate(0, 0);
+  }
+}
+
+.animating {
+  pointer-events: none;
+}
+.animated-substack {
+  cursor: pointer;
+  animation: substackanimation1 10s ease forwards;
+}
+/* .bi-substack:hover {
+  cursor: pointer;
+} */

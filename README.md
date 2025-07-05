@@ -1,6 +1,6 @@
 ## Website Programming Project
 
-This project uses python to automate the creation of a basic website, in sort using it to link a variety of created csvs and md files in a variety of subfolders onto the website.
+This project uses python to automate the creation of a basic website, in sort using it to link a variety of created csvs and md files in a variety of subfolders onto the website. Such as a 50 row and column markdown table in a markdown file or a 50 row and column csv file in a csv file.
 As a result, I can regenerate the entire website in seconds with the footer on the top, for example, or with diferent H1s, titles, or links.
 
 See the website on github pages here:
@@ -44,6 +44,6 @@ In this project I also learned how to add title attributes to HTML elements, how
 -webkit-text-fill-color: transparent;
 ```
 
-Also added in animations and transformations into the css code.
+Also added in animations and transformations into the css code, try hovering over the substack link.
 
 [GitHub]: https://github.com/shalevwiden/WebsiteProgrammingProject/blob/main/README.md

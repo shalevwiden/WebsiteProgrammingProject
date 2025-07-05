@@ -57,9 +57,10 @@ def generate_websitestructure(assetfolderpath,htmlpath):
 
     htmlfiledirs=[item for item in os.listdir(htmlpath) if os.path.isdir(f'{htmlpath}/{item}')]    
     # in_folder=[item for item in os.listdir(f'{htmlpath}/{folder}') if os.path.isdir(f'{htmlpath}/{folder}/{item}')]
+    maindirs=[item for item in os.listdir(assetfolderpath) if "50" not in item]   
 
-    maindirs=[item for item in os.listdir(assetfolderpath) if os.path.isdir(f'{assetfolderpath}/{item}')]
-
+    maindirs=[item for item in maindirs if os.path.isdir(f'{assetfolderpath}/{item}')]
+    print(f'maindirs:{maindirs}')
     for folder in maindirs:
         foldername=folder.replace('webasset','')
         foldername=foldername.split('s')
@@ -137,6 +138,9 @@ def generate_websitestructure(assetfolderpath,htmlpath):
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+
+    <!-- animation doc -->
+    <link rel="stylesheet" href="../../../cssfiles/animations.css" />
   </head>
   <body>
     <div class="sitecontainer">
@@ -215,6 +219,8 @@ def generate_websitestructure(assetfolderpath,htmlpath):
         </div>
       </footer>
     </div>
+      <script src="../../../jsfiles/jsanimation.js"></script>
+
   </body>
 </html>
 
@@ -233,6 +239,9 @@ def generate_websitestructure(assetfolderpath,htmlpath):
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+
+    <!-- animation doc -->
+    <link rel="stylesheet" href="../../../cssfiles/animations.css" />
   </head>
   <body>
     <style>
@@ -320,6 +329,8 @@ def generate_websitestructure(assetfolderpath,htmlpath):
           console.error(error);
         }});
     </script>
+        <script src="../../../jsfiles/jsanimation.js"></script>
+
   </body>
 </html>
 
@@ -345,8 +356,10 @@ def generate_main_subfolders(htmlpath):
 
     This generated folders1-5index.html
 
-    '''
-    htmlfiledirs=[item for item in os.listdir(htmlpath) if os.path.isdir(f'{htmlpath}/{item}')]    
+    '''    
+    htmlfiledirs=[item for item in os.listdir(htmlpath) if "50" not in item]   
+
+    htmlfiledirs=[item for item in htmlfiledirs if os.path.isdir(f'{htmlpath}/{item}')] 
 
     for folder in htmlfiledirs:
 
@@ -355,7 +368,7 @@ def generate_main_subfolders(htmlpath):
 
         subfolders=os.listdir(fullfolderpath) 
         subfolders=[item for item in os.listdir(fullfolderpath) if os.path.isdir(os.path.join(fullfolderpath,item))]
-       
+
         print(f'subfolders:\n{subfolders}\n')
 
         subfolders=sorted(subfolders,key=lambda x:int(x.replace('files','').split('e')[-1]))
@@ -402,6 +415,9 @@ def generate_main_subfolders(htmlpath):
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+
+    <!-- animation doc -->
+    <link rel="stylesheet" href="../../cssfiles/animations.css" />
   </head>
   <body>
     <div class="sitecontainer">
@@ -452,6 +468,8 @@ def generate_main_subfolders(htmlpath):
         </div>
       </footer>
     </div>
+        <script src="../../jsfiles/jsanimation.js"></script>
+
   </body>
 </html>
 
