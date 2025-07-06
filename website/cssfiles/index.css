@@ -277,6 +277,14 @@ span.gradtext {
     grid-column: 2;
   }
 }
+@media screen and (max-width: 596px) {
+  #about {
+    line-height: 1;
+    /* trbl */
+    margin: 30px 20px 60px 10px;
+    font-size: 31px;
+  }
+}
 
 footer {
   display: flex;
