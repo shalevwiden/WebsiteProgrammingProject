@@ -39,6 +39,7 @@ body {
   grid-row: 1;
   grid-column: 2;
   flex: 1;
+  padding-right: 58px;
 }
 /* this is the h2 element itself */
 #about {
@@ -224,11 +225,12 @@ span.gradtext {
     margin: 10px 10px 20px 10px;
     display: flex !important;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: flex-start;
     /* grid box stuff */
     align-self: stretch;
     justify-self: stretch;
+    padding: 0;
   }
 
   #about {
@@ -277,6 +279,7 @@ span.gradtext {
     grid-column: 2;
   }
 }
+/* makes about more responsive */
 @media screen and (max-width: 596px) {
   #about {
     line-height: 1;
