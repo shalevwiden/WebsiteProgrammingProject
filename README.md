@@ -3,7 +3,7 @@
 This project uses python to automate the creation of a basic website, in sort using it to link a variety of created csvs and md files in a variety of subfolders onto the website. Such as a 50 row and column markdown table in a markdown file or a 50 row and column csv file in a csv file.
 As a result, I can regenerate the entire website in seconds with the footer on the top, for example, or with diferent H1s, titles, or links.
 
-See the website on github pages here:
+See the website on github pages here: websitelink
 
 I automated the creation of the markdown and csv files from a previous project, which is on my github as
 `markdowntable_andcsv_creator`.
@@ -16,7 +16,7 @@ With the .csv you can download it.
 
 This project has 10 Asset Storage Files, which are split up and accessed by 1-5 and 6-10. Each page links to a created markdown file and csv file, of which the number of rows and columns correlates to the number of the html file.
 <br>
-Many such tweaks have been made to the markdown file, which updates all created markdown files through `tablecreatorscript.py` in the `markdowntable_andcsv_creator` repo
+Many such tweaks have been made to the markdown file, which updates all created markdown files through `tablecreatorscript.py` in the `markdowntable_andcsv_creator` repo.
 
 ---
 
@@ -47,3 +47,4 @@ In this project I also learned how to add title attributes to HTML elements, how
 Also added in animations and transformations into the css code, try hovering over the substack link.
 
 [GitHub]: https://github.com/shalevwiden/WebsiteProgrammingProject/blob/main/README.md
+[websitelink]: https://shalevwiden.github.io/WebsiteProgrammingProject/
