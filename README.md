@@ -2,13 +2,12 @@
 
 This project uses python to automate the creation of a basic website, in sort using it to link a variety of created csvs and md files in a variety of subfolders onto the website. Such as a 50 row and column markdown table in a markdown file or a 50 row and column csv file in a csv file.
 As a result, I can regenerate the entire website in seconds with the footer on the top, for example, or with diferent H1s, titles, or links.
-
 <br>
 
 See the website on github pages here: [websitelink]
 <br>
-I created a seperate repo to deploy the website, since I had to rename the html files folder to docs and didnt want to need to move it, so just copied the files into a new repo.
-In the wpp_site repo, the docs folder is in the root so it can be published on github pages.
+I created a seperate repo to deploy the website, since I had to move index.html to the root and change alot of file paths.
+In the wpp_site repo, the index.html file is in the root so it can be published on github pages.
 
 I automated the creation of the markdown and csv files from a previous project, which is on my github as
 `markdowntable_andcsv_creator`.
@@ -42,7 +41,7 @@ html_link=subfolder.split(num)[0]+num+'.html'
 
 This project has many such references, navigating through the `assets` folder to build a website in the `html_files` folder, definitely making it less maleable.
 
-In this project I also learned how to add title attributes to HTML elements, how to render Markdown content dynamically in html (like this page here, which is just the rendered README.md from [GitHub]), and how to make css text a gradient through:
+In this project I also learned how to add title attributes to HTML elements, how to render Markdown content dynamically in html through marked.js (like this page here, which is just the rendered README.md from [GitHub]), and how to make css text a gradient through:
 
 ```css
 -webkit-background-clip: text;
