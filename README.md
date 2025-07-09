@@ -4,6 +4,10 @@ This project uses python to automate the creation of a basic website, in sort us
 As a result, I can regenerate the entire website in seconds with the footer on the top, for example, or with diferent H1s, titles, or links.
 
 See the website on github pages here: [websitelink]
+<br>
+
+I created a seperate repo to deploy the website, since I had to rename the html files folder to docs and didnt want to need to move it, so just copied the files into a new repo.
+<br>
 
 I automated the creation of the markdown and csv files from a previous project, which is on my github as
 `markdowntable_andcsv_creator`.
