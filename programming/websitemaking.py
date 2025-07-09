@@ -35,7 +35,7 @@ def initialize_samplewebsite_assets():
 
 
 # remove the leading slash
-htmlfolderpath='website/html_files'
+htmlfolderpath='website/docs'
 assetspath='website/assets'
 
 def generate_websitestructure(assetfolderpath,htmlpath):
