@@ -52,4 +52,4 @@ In this project I also learned how to add title attributes to HTML elements, how
 Also added in animations and transformations into the css code, try hovering over the substack link.
 
 [GitHub]: https://github.com/shalevwiden/WebsiteProgrammingProject/blob/main/README.md
-[websitelink]: https://github.com/shalevwiden/wpp_site
+[websitelink]: https://shalevwiden.github.io/wpp_site/
